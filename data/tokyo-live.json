@@ -1,0 +1,31 @@
+{
+  "schema": "yoshimoto-theater/live-v1",
+  "generated_from": "config/live.yml",
+  "theaters": [
+    {
+      "id": "jim-bocho-yoshimoto-manzai-theater",
+      "name": "神保町よしもと漫才劇場",
+      "area": "神保町",
+      "type": "comedy"
+    },
+    {
+      "id": "shibuya-yoshimoto-manzai-theater",
+      "name": "渋谷よしもと漫才劇場",
+      "area": "渋谷",
+      "type": "comedy"
+    },
+    {
+      "id": "yoshimoto-roppongi-theater",
+      "name": "YOSHIMOTO ROPPONGI THEATER",
+      "area": "六本木",
+      "type": "comedy"
+    },
+    {
+      "id": "small-theater-shimokitazawa",
+      "name": "下北沢 小劇場",
+      "area": "下北沢",
+      "type": "small-theater"
+    }
+  ],
+  "events": []
+}
