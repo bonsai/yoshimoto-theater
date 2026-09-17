@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Build normalized live-event JSON and a simple Tokyo theater HTML page from YAML."""
+"""Build normalized live-event JSON and the static GitHub Pages HTML page."""
 from pathlib import Path
-import json
 import html
+import json
+
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,6 +24,7 @@ def main():
         "events": events,
     }
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
+    OUT_HTML.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     by_theater = {t.get("id"): t for t in theaters}
@@ -43,7 +45,7 @@ def main():
         theater = by_theater.get(theater_id, {})
         name = html.escape(theater.get("name", theater_id))
         area = html.escape(theater.get("area", ""))
-        parts.append(f"<section><h2>{name}</h2><p class=\"meta\">{area}</p><ul>")
+        parts.append(f'<section><h2>{name}</h2><p class="meta">{area}</p><ul>')
         for event in sorted(theater_events, key=lambda x: (x.get("date", ""), x.get("start", ""))):
             title = html.escape(event.get("title", ""))
             date = html.escape(event.get("date", ""))
