@@ -53,7 +53,7 @@ def main():
             parts.append(f"<li><strong>{date} {start}</strong> — {title}</li>")
         parts.append("</ul></section>")
     parts += [
-        '<p><a href="../data/tokyo-live.json">JSON</a> · <a href="../data/theaters.jsonl">劇場マスター</a></p>',
+        '<p><a href="data/tokyo-live.json">JSON</a> · <a href="data/theaters.jsonl">劇場マスター</a></p>',
         "</body></html>",
     ]
     OUT_HTML.write_text("\n".join(parts) + "\n", encoding="utf-8")
